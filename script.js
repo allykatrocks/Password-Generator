@@ -13,17 +13,36 @@ var chooseSpecial;
 debugger
 function generatePassword(){
   userInput = window.prompt("Choose password length (must be between 8 and 128 characters");
-
+  var length = Number(userInput)
   if (!userInput) {
     alert("Value is required");
-  } else if (userInput > 8 || userInput < 128) {
+    return;
+  } else if (isNaN(length)) {
+    alert("Value must be a number");
+    return;
+  } else if (length < 8 || length > 128) {
     alert("Must be between 8 and 128");
-  } 
+  }
+  else if (length >= 8 && length <= 128) {
+    chooseUpperCase = window.confirm("Include uppercase letters?");
+    chooseLowerCase = window.confirm("Include lowercase letters?");
+    chooseNumbers = window.confirm("Include numbers?");
+    chooseSpecial = window.confirm("Include special characters?");
+
+    if (!chooseUpperCase && !chooseLowerCase && !chooseNumbers && !chooseSpecial) {
+      alert("Areas are required");
+      return;
+    } 
+      
+  }
+    
+ 
+ 
+}
+
+
    
-  chooseUpperCase = window.confirm("Include uppercase letters?");
-  chooseLowerCase = window.confirm("Include lowercase letters?");
-  chooseNumbers = window.confirm("Include numbers?");
-  chooseSpecial = window.confirm("Include special characters?");
+  
 
     
     
@@ -38,4 +57,4 @@ function writePassword() {
 }
 
 // Add event listener to generate button]
-generateBtn.addEventListener("click", writePassword)}
+generateBtn.addEventListener("click", writePassword)
