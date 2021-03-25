@@ -18,12 +18,12 @@ function generatePassword(){
     alert("Value is required");
   } else if (userInput > 8 || userInput < 128) {
     alert("Must be between 8 and 128");
-  } else {
-    chooseUpperCase = window.confirm("Include uppercase letters?");
-    chooseLowerCase = window.confirm("Include lowercase letters?");
-    chooseNumbers = window.confirm("Include numbers?");
-    chooseSpecial = window.confirm("Include special characters?");
-  };
+  } 
+   
+  chooseUpperCase = window.confirm("Include uppercase letters?");
+  chooseLowerCase = window.confirm("Include lowercase letters?");
+  chooseNumbers = window.confirm("Include numbers?");
+  chooseSpecial = window.confirm("Include special characters?");
 
     
     
@@ -37,5 +37,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// Add event listener to generate button]
+generateBtn.addEventListener("click", writePassword)}
