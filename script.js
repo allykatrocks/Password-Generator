@@ -35,8 +35,24 @@ function generatePassword(){
     } 
       
   }
-    
- 
+    var userChoices = []
+    if (chooseUpperCase) {
+      userChoices = userChoices.concat(upperCaseArray);
+    }
+    if (chooseLowerCase) {
+      userChoices = userChoices.concat(lowerCaseArray);
+    }
+    if (chooseNumbers) {
+      userChoices = userChoices.concat(numberArray);
+    }
+    if (chooseSpecial) {
+      userChoices = userChoices.concat(specialCharArray);
+    }
+    var newPassword = [];
+    for (var i = 0; i < length; i++) {
+      newPassword.push(userChoices[Math.floor(Math.random() * userChoices.length)]);
+    }
+    return newPassword.join('');
  
 }
 
